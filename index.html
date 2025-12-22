@@ -1,0 +1,172 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>AI Quote Generator</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 100px;
+            background-color: #f4f4f4;
+        }
+        .box {
+            background: white;
+            padding: 30px;
+            width: 60%;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h1>🤖 AI Quote Generator</h1>
+
+        <p style="font-size:20px;">
+            "{{ quote }}"
+        </p>
+
+        <p><b>— {{ author }}</b></p>
+
+        <br>
+
+        <form method="get">
+            <button type="submit">Generate New Quote</button>
+        </form>
+    </div>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Quote Generator</title>
+
+    <!-- CSS -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .box {
+            background: #ffffff;
+            padding: 40px;
+            width: 60%;
+            max-width: 600px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        #quote {
+            font-size: 22px;
+            color: #555;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        #author {
+            font-size: 18px;
+            color: #777;
+            margin-bottom: 30px;
+        }
+
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background: #5a67d8;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h1>🤖 AI Quote Generator</h1>
+
+        <p id="quote">"Click the button to get inspired!"</p>
+        <p id="author"><b>— AI Bot</b></p>
+
+        <button onclick="generateQuote()">Generate New Quote</button>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        const quotes = [
+            {
+                quote: "Artificial intelligence is the new electricity.",
+                author: "Andrew Ng"
+            },
+            {
+                quote: "The best way to predict the future is to invent it.",
+                author: "Alan Kay"
+            },
+            {
+                quote: "AI will not replace humans, but humans using AI will.",
+                author: "Ginni Rometty"
+            },
+            {
+                quote: "Learning never exhausts the mind.",
+                author: "Leonardo da Vinci"
+            },
+            {
+                quote: "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+                author: "Winston Churchill"
+            }
+        ];
+
+        function generateQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            document.getElementById("quote").innerText =
+                `"${quotes[randomIndex].quote}"`;
+            document.getElementById("author").innerHTML =
+                `<b>— ${quotes[randomIndex].author}</b>`;
+        }
+    </script>
+
+</body>
+</html>
